@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "196112613762",
+    "project_id": "androidapplications-8e484",
+    "storage_bucket": "androidapplications-8e484.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196112613762:android:05325c0acd21bcf25a4f9b",
+        "android_client_info": {
+          "package_name": "com.example.leanplumandroidapplicationjava"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196112613762-dt0jj3ekn3oavkl7ejaa04vsuedooqdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2pVIVb4TtBBhzg63SX9pxDupFCf31KYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196112613762-dt0jj3ekn3oavkl7ejaa04vsuedooqdl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
