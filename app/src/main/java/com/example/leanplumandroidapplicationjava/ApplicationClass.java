@@ -25,9 +25,9 @@ public class ApplicationClass extends Application {
 
         // Insert your API keys here.
         if (BuildConfig.DEBUG) {
-            Leanplum.setAppIdForDevelopmentMode("Enter your appId","Enter your accessKey");
+            Leanplum.setAppIdForDevelopmentMode("app_7rES7iqzXiBbDW4KvyB928lgqxZzv6ZqN2WHIQIdS0A","dev_hRcCzQRU78zJhpmR7ZSXS2vAQxRd44nQA3h11b6Wsbw");
         } else {
-            Leanplum.setAppIdForProductionMode("Enter your appId", "Enter your accessKey");
+            Leanplum.setAppIdForProductionMode("app_7rES7iqzXiBbDW4KvyB928lgqxZzv6ZqN2WHIQIdS0A", "prod_SCaHcX0KHY7Zf8Sp7zjRoTbLSC1UDl9VLEOY1pPgSGE");
         }
 
         // This will only run once per session, even if the activity is restarted.

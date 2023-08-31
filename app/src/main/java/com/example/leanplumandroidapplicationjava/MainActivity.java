@@ -13,7 +13,6 @@ import com.leanplum.Leanplum;
 import com.leanplum.LeanplumApplication;
 import com.leanplum.LeanplumInbox;
 import com.leanplum.LeanplumInboxMessage;
-import com.leanplum.callbacks.InboxSyncedCallback;
 
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 profileUpdate.put("Name", name);
                 profileUpdate.put("Enter Email", email);
                 profileUpdate.put("Enter Mobile", mobile);
-                Leanplum.setUserId("user1234");
+                Leanplum.setUserId(identity);
                 Leanplum.setUserAttributes(profileUpdate);
                Leanplum.start(getApplicationContext(), profileUpdate);
             }
@@ -102,17 +101,25 @@ public class MainActivity extends AppCompatActivity {
                 Leanplum.track("Push Sent");
             }
         });
-btnappinbox.setOnClickListener(new View.OnClickListener() {
+btnappinboxshow.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Leanplum.getInbox();
 
+        LeanplumInbox inbox = Leanplum.getInbox();
+        //This method currently returns a list of NewsfeedMessage objects, which you'll need to cast to the new InboxMessage objects.
+        List all = inbox.allMessages();
+        List<LeanplumInboxMessage> messages = (List<LeanplumInboxMessage>) all;
+
+        Log.d("leanpluminboxshow", ""+all.size());
+        Log.d("unreadcount", ""+inbox.unreadCount());
+
         //Download messages. All registered InboxSyncedCallback will be invoked.
-        Leanplum.getInbox().downloadMessages();
+      //  Leanplum.getInbox().downloadMessages();
 
 //Download messages.
 //All registered InboxSyncedCallback will be invoked including the parameter callback.
-        Leanplum.getInbox().downloadMessages(new InboxSyncedCallback() {
+        /*Leanplum.getInbox().downloadMessages(new InboxSyncedCallback() {
             @Override
             public void onForceContentUpdate(boolean success) {
                 LeanplumInbox inbox = Leanplum.getInbox();
@@ -121,9 +128,11 @@ btnappinbox.setOnClickListener(new View.OnClickListener() {
                 List<LeanplumInboxMessage> messages = (List<LeanplumInboxMessage>) all;
 
                 Log.d("leanpluminboxshow", ""+all.size());
+                Log.d("unreadcount", ""+inbox.unreadCount());
+
 // Do stuff with messages.
             }
-        });
+        });*/
     }
 });
     }
